@@ -1,0 +1,171 @@
+<!DOCTYPE html> 
+<html>
+	<head>
+		<title>HTML Demo - WEB700</title>
+		<meta charset="UTF-8" />
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+		      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
+		      crossorigin="anonymous">
+	</head>
+
+	<body>
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<a class="navbar-brand" href="#">Beatriz Alves</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" 
+			        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+					<li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+					<li class="nav-item active"><a class="nav-link" href="/htmlDemo">Html Demo</a></li>
+				</ul>
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item"><a class="nav-link" href="/students">Students</a></li>
+					<li class="nav-item"><a class="nav-link" href="/tas">Teaching Assistants</a></li>
+					<li class="nav-item"><a class="nav-link" href="/courses">Courses</a></li>
+				</ul>
+			</div>
+		</nav>
+
+		<div class="container mt-4">
+			<main>
+				<!-- Tables Section -->
+				<h2>Tables</h2>
+				<!-- First Table -->
+				<table class="table table-bordered">
+					<caption>Sample Table 1</caption>
+					<thead class="thead-dark">
+						<tr>
+							<th>Header 1</th>
+							<th>Header 2</th>
+							<th>Header 3</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td rowspan="2">Rowspan Example</td>
+							<td>Row 1, Cell 2</td>
+							<td>Row 1, Cell 3</td>
+						</tr>
+						<tr>
+							<td colspan="2">Colspan Example</td>
+						</tr>
+						<tr>
+							<td>Row 3, Cell 1</td>
+							<td>Row 3, Cell 2</td>
+							<td>Row 3, Cell 3</td>
+						</tr>
+					</tbody>
+					<tfoot>
+						<tr>
+							<td colspan="3" class="text-center">Footer Information</td>
+						</tr>
+					</tfoot>
+				</table>
+
+				<!-- Second Table -->
+				<table class="table table-bordered">
+					<caption>Sample Table 2</caption>
+					<thead class="thead-light">
+						<tr>
+							<th>Col 1</th>
+							<th>Col 2</th>
+							<th>Col 3</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Data 1</td>
+							<td>Data 2</td>
+							<td>Data 3</td>
+						</tr>
+						<tr>
+							<td colspan="2">Merged Data</td>
+							<td>Data 4</td>
+						</tr>
+						<tr>
+							<td>Data 5</td>
+							<td rowspan="2">Rowspan Data</td>
+							<td>Data 6</td>
+						</tr>
+						<tr>
+							<td>Data 7</td>
+							<td>Data 8</td>
+						</tr>
+					</tbody>
+					<tfoot>
+						<tr>
+							<td colspan="3" class="text-center">Table Footer</td>
+						</tr>
+					</tfoot>
+				</table>
+				<p>This section demonstrates two HTML tables that use captions, headers, body, footer, rowspan, and colspan.</p>
+
+				<!-- Lists Section -->
+				<h2>Lists</h2>
+				<ol>
+					<li>First Item</li>
+					<li>Second Item</li>
+					<li>
+						Third Item with a nested list:
+						<ul>
+							<li>Nested Item A</li>
+							<li>Nested Item B</li>
+							<li>Nested Item C</li>
+						</ul>
+					</li>
+					<li>Fourth Item</li>
+					<li>Fifth Item</li>
+				</ol>
+				<p>This section shows an example of an ordered list with a nested unordered list.</p>
+
+				<!-- Images Section -->
+				<h2>Images</h2>
+				<div class="row">
+					<div class="col-md-4">
+						<img src="https://upload.wikimedia.org/wikipedia/commons/6/69/Snowboarder_in_halfpipe.jpg" alt="Snowboarder" class="img-fluid">
+					</div>
+					<div class="col-md-4">
+						<img src="https://upload.wikimedia.org/wikipedia/commons/4/47/PNG_transparency_demonstration_1.png" alt="PNG Demonstration" class="img-fluid">
+					</div>
+					<div class="col-md-4">
+						<img src="https://upload.wikimedia.org/wikipedia/commons/a/a3/June_odd-eyed-cat.jpg" alt="Odd-eyed Cat" class="img-fluid">
+					</div>
+				</div>
+				<p>This section demonstrates how to include images with alternative text for accessibility.</p>
+
+				<!-- Audio Section -->
+				<h2>Audio</h2>
+				<audio controls>
+					<source src="https://pat-crawford-sdds.netlify.app/shared/fall-2021/web700/A3/sample-audio.mp3" type="audio/mpeg">
+					<source src="https://pat-crawford-sdds.netlify.app/shared/fall-2021/web700/A3/sample-audio.ogg" type="audio/ogg">
+					Your browser does not support the audio element.
+				</audio>
+				<p>This section includes an HTML5 audio player with multiple source formats.</p>
+
+				<!-- Video Section -->
+				<h2>Video</h2>
+				<video width="320" height="240" controls>
+					<source src="https://pat-crawford-sdds.netlify.app/shared/fall-2021/web700/A3/sample-video.mp4" type="video/mp4">
+					<source src="https://pat-crawford-sdds.netlify.app/shared/fall-2021/web700/A3/sample-video.ogg" type="video/ogg">
+					<source src="https://pat-crawford-sdds.netlify.app/shared/fall-2021/web700/A3/sample-video.webm" type="video/webm">
+					Your browser does not support the video tag.
+				</video>
+				<p>This section demonstrates an HTML5 video player with multiple video sources.</p>
+			</main>
+		</div>
+
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" 
+		        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" 
+		        crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" 
+		        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" 
+		        crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" 
+		        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" 
+		        crossorigin="anonymous"></script>
+	</body>
+</html>
