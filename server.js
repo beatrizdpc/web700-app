@@ -13,6 +13,7 @@ const collegeData = require("./modules/collegeData.js");
 const app = express();
 const HTTP_PORT = process.env.PORT || 8080;
 app.use(express.static("public"));
+app.use(express.urlencoded({ extended: true }));
 
 
 app.get("/students", (req, res) => {
