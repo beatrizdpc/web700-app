@@ -11,7 +11,6 @@ module.exports.initialize = function() {
         return;
       }
       students = JSON.parse(data);
-
       fs.readFile('./data/courses.json', 'utf8', (err, data) => {
         if (err) {
           reject("Unable to read courses.json");
@@ -24,20 +23,19 @@ module.exports.initialize = function() {
   });
 };
 
-
 module.exports.getAllStudents = () => {
   return new Promise((resolve, reject) => {
-    if (dataCollection.students.length === 0) {
+    if (students.length === 0) {
       reject("no results returned");
     } else {
-      resolve(dataCollection.students);
+      resolve(students);
     }
   });
 };
 
 module.exports.getTAs = () => {
   return new Promise((resolve, reject) => {
-    const tas = dataCollection.students.filter(student => student.TA === true);
+    const tas = students.filter(student => student.TA === true);
     if (tas.length === 0) {
       reject("no results returned");
     } else {
@@ -48,14 +46,14 @@ module.exports.getTAs = () => {
 
 module.exports.getCourses = () => {
   return new Promise((resolve, reject) => {
-    if (dataCollection.courses.length === 0) {
+    if (courses.length === 0) {
       reject("no results returned");
     } else {
-      resolve(dataCollection.courses);
+      resolve(courses);
     }
   });
 };
-//adding new
+
 module.exports.getStudentsByCourse = function(course) {
   return new Promise((resolve, reject) => {
     const filtered = students.filter(s => s.course == course);
@@ -69,11 +67,20 @@ module.exports.getStudentsByCourse = function(course) {
 
 module.exports.getStudentByNum = function(num) {
   return new Promise((resolve, reject) => {
-      const student = students.find(s => s.studentNum == num);
-      if(student) {
-          resolve(student);
-      } else {
-          reject("no results returned");
-      }
+    const student = students.find(s => s.studentNum == num);
+    if(student) {
+      resolve(student);
+    } else {
+      reject("no results returned");
+    }
   });
-}
+};
+
+module.exports.addStudent = function(studentData) {
+  return new Promise((resolve, reject) => {
+    studentData.TA = (studentData.TA === undefined) ? false : true;
+    studentData.studentNum = students.length + 1;
+    students.push(studentData);
+    resolve();
+  });
+};
