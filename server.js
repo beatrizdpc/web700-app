@@ -14,6 +14,10 @@ const app = express();
 const HTTP_PORT = process.env.PORT || 8080;
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
+app.get("/students/add", (req, res) => {
+    res.sendFile(path.join(__dirname, "views", "addStudent.html"));
+  });
+  
 
 
 app.get("/students", (req, res) => {
