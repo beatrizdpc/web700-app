@@ -1,20 +1,24 @@
 /*********************************************************************************
-*  WEB700 – Assignment 03
+*  WEB700 – Assignment 04
 *  I declare that this assignment is my own work in accordance with Seneca  Academic Policy.  No part 
 *  of this assignment has been copied manually or electronically from any other source 
 *  (including 3rd party web sites) or distributed to other students.
 * 
-*  Name: Beatriz Alves Student ID: 112419247 Date: 2024/02/18
+*  Name: Beatriz Alves Student ID: 112419247 Date: 2025-03-10
+*
+*  Online (Vercel) Link: ________________________________________________________
 *
 ********************************************************************************/ 
 const express = require("express");
 const path = require("path");
+require("pg");
 const collegeData = require("./modules/collegeData.js");
 const app = express();
 const HTTP_PORT = process.env.PORT || 8080;
 
-app.use(express.static("public"));
+app.use(express.static(__dirname + "/public"));
 app.use(express.urlencoded({ extended: true }));
+app.set("views", __dirname + "/views");
 
 app.get("/students/add", (req, res) => {
   res.sendFile(path.join(__dirname, "views", "addStudent.html"));
