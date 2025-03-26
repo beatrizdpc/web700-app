@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Student Update - WEB700</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="/css/theme.css">
+  </head>
+  <body>
+    <div class="row">
+      <main class="col-md-12">
+        <br>
+        <h2><%= student.firstName %> <%= student.lastName %> - Student: <%= student.studentNum %></h2>
+        <hr />
+        <form method="post" action="/student/update">
+          <input type="hidden" name="studentNum" value="<%= student.studentNum %>" />
+          
+          <fieldset>
+            <legend>Personal Information</legend>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>First Name:</label>
+                  <input class="form-control" name="firstName" type="text" value="<%= student.firstName %>" />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Last Name:</label>
+                  <input class="form-control" name="lastName" type="text" value="<%= student.lastName %>" />
+                </div>
+              </div>
+            </div>
+          </fieldset>
+          
+          <fieldset>
+            <legend>Contact Information</legend>
+            <div class="form-group">
+              <label>Email:</label>
+              <input class="form-control" name="email" type="email" value="<%= student.email %>" />
+            </div>
+          </fieldset>
+          
+          <fieldset>
+            <legend>Address</legend>
+            <div class="row">
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label>Street:</label>
+                  <input class="form-control" name="addressStreet" type="text" value="<%= student.addressStreet %>" />
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label>City:</label>
+                  <input class="form-control" name="addressCity" type="text" value="<%= student.addressCity %>" />
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label>Province:</label>
+                  <input class="form-control" name="addressProvince" type="text" value="<%= student.addressProvince %>" />
+                </div>
+              </div>
+            </div>
+          </fieldset>
+          
+          <fieldset>
+            <legend>Other Information</legend>
+            <div class="form-group">
+              <label>TA:</label>
+              <input type="checkbox" name="TA" value="true" <%= student.TA ? "checked" : "" %> />
+            </div>
+            <div class="form-group">
+              <label>Status:</label><br>
+              <input type="radio" name="status" value="Full Time" <%= student.status === "Full Time" ? "checked" : "" %> /> Full Time&nbsp;&nbsp;
+              <input type="radio" name="status" value="Part Time" <%= student.status === "Part Time" ? "checked" : "" %> /> Part Time
+            </div>
+            <div class="form-group">
+              <label>Course:</label>
+              <select class="form-control" name="course">
+                <option value="1" <%= student.course == "1" ? "selected" : "" %>>1</option>
+                <option value="2" <%= student.course == "2" ? "selected" : "" %>>2</option>
+                <option value="3" <%= student.course == "3" ? "selected" : "" %>>3</option>
+                <option value="4" <%= student.course == "4" ? "selected" : "" %>>4</option>
+                <option value="5" <%= student.course == "5" ? "selected" : "" %>>5</option>
+                <option value="6" <%= student.course == "6" ? "selected" : "" %>>6</option>
+                <option value="7" <%= student.course == "7" ? "selected" : "" %>>7</option>
+                <option value="8" <%= student.course == "8" ? "selected" : "" %>>8</option>
+                <option value="9" <%= student.course == "9" ? "selected" : "" %>>9</option>
+                <option value="10" <%= student.course == "10" ? "selected" : "" %>>10</option>
+                <option value="11" <%= student.course == "11" ? "selected" : "" %>>11</option>
+              </select>
+            </div>
+          </fieldset>
+          
+          <hr />
+          <input type="submit" class="btn btn-primary float-right" value="Update Student" />
+          <br /><br /><br />
+        </form>
+      </main>
+    </div>
+  </body>
+</html>
